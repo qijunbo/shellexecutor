@@ -1,4 +1,4 @@
-package usage;
+package com.sunway.monitor.usage;
 
 import java.io.File;
 import java.util.stream.Stream;
@@ -11,7 +11,7 @@ public class DiskInfo {
 
 	private long free;
 
-	protected DiskInfo(String name, long total, long free) {
+	public DiskInfo(String name, long total, long free) {
 		super();
 		this.name = name;
 		this.total = total;

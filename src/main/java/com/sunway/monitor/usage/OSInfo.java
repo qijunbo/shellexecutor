@@ -1,9 +1,9 @@
-package usage;
+package com.sunway.monitor.usage;
 
 import java.io.File;
 import java.util.stream.Stream;
 
-public class SysInfo {
+public class OSInfo {
 
 	private String osname;
 
@@ -11,15 +11,15 @@ public class SysInfo {
 
 	private String osarch;
 
-	private SysInfo(String osname, String osversion, String osarch) {
+	private OSInfo(String osname, String osversion, String osarch) {
 		super();
 		this.osname = osname;
 		this.osversion = osversion;
 		this.osarch = osarch;
 	}
 
-	public static SysInfo getSysInfo() {
-		return new SysInfo(System.getProperty("os.name"), System.getProperty("os.version"),
+	public static OSInfo getSysInfo() {
+		return new OSInfo(System.getProperty("os.name"), System.getProperty("os.version"),
 				System.getProperty("os.arch"));
 	}
 
@@ -31,7 +31,7 @@ public class SysInfo {
 			return new DiskInfo(f.getAbsolutePath(), f.getTotalSpace(), f.getFreeSpace());
 		}).forEach(f -> System.out.println(f.toString()));
 
-		System.out.println(SysInfo.getSysInfo().toString());
+		System.out.println(OSInfo.getSysInfo().toString());
 	}
 
 	@Override

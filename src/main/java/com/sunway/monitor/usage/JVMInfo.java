@@ -1,4 +1,4 @@
-package usage;
+package com.sunway.monitor.usage;
 
 public class JVMInfo {
 
